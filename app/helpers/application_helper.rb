@@ -3,7 +3,7 @@ module ApplicationHelper
     if hour.to_i > 12
       "#{hour - 12} PM"
     else
-      "#{hour} AM"
+      "#{hour == 0 ? 12 : hour} AM"
     end
   end
 end

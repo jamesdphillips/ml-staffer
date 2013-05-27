@@ -18,6 +18,7 @@ class UsersController < ApplicationController
     if @user.save
       respond_with(@user)
     else
+      puts @user.errors.inspect
       redirect_to :new
     end
   end
