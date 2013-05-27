@@ -1,3 +1,49 @@
-// Place all the styles related to the directory controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+//==============================================================================
+// Base
+//==============================================================================
+
+body {
+  font-family: "Proxima Nova", "Helvetica Neue", "Helvetica", "Lucida Grande", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  background: #f4f4f4;
+}
+
+//==============================================================================
+// Card
+//==============================================================================
+
+.card {
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  margin: 10px;
+  width: 500px;
+  height: 150px;
+  float: left;
+  position: relative;
+
+  .avatar {
+    height: 100px;
+    width: 100px;
+    float: left;
+  }
+
+  .details {
+    float: left;
+    padding: 20px;
+    width: 360px;
+    height: 60px;
+    background: #eee;
+
+    p {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .status {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+}
