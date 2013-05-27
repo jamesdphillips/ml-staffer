@@ -4,9 +4,12 @@ class User < ActiveRecord::Base
          :confirmable # , :omniauthable
 
   attr_accessible :name, :email, :password, :password_confirmation,
-                  :remember_me, :timezone, :gtalk_status
+                  :remember_me, :timezone, :role, :start_work_hour,
+                  :end_work_hour, :gtalk_status
 
   before_create :generate_password
+
+  validates :name, :email, presence: true
 
   private
 
