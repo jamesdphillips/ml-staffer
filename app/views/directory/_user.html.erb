@@ -1,4 +1,5 @@
-<div class="user card">
+<% location = user.location %>
+<div class="user card <%= location.present? ? 'card-with-map' : '' %>">
   <!-- <img src="images/<%= user.photo_url %>" /> -->
   <span class="status"><%= user.gtalk_status %></span>
   <img src="http://placehold.it/300x300" class="avatar" />
@@ -10,5 +11,7 @@
     </p>
     <p class="hours"><%= display_hour user.start_work_hour || 9 %> to <%= display_hour user.end_work_hour || 17 %></p>
   </div>
+  <% if location.present? %>
+    <p><%= render partial: "map", locals: { user: user, location: location } %></p>
+  <% end %>
 </div>
-

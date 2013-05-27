@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130527220126) do
+ActiveRecord::Schema.define(:version => 20130527224104) do
+
+  create_table "location_updates", :force => true do |t|
+    t.integer  "user_id"
+    t.decimal  "latitude",   :precision => 10, :scale => 6
+    t.decimal  "longitude",  :precision => 10, :scale => 6
+    t.decimal  "accuracy",   :precision => 10, :scale => 6
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email"
