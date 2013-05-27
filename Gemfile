@@ -8,6 +8,8 @@ gem 'jbuilder'
 gem 'devise'
 gem 'simple_form'
 gem 'country_select'
+gem 'xmpp4r-simple', github: 'blaine/xmpp4r-simple'
+
 
 group :assets do
   gem 'slim'

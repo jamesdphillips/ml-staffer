@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
          :confirmable # , :omniauthable
 
   attr_accessible :name, :email, :password, :password_confirmation,
-                  :remember_me, :timezone
+                  :remember_me, :timezone, :gtalk_status
 
   before_create :generate_password
 
