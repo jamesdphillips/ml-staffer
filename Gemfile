@@ -1,15 +1,14 @@
 source 'https://rubygems.org'
 
-gem 'rails', branch: "4-0-stable"
+gem 'rails', '3.2.12'
 gem 'sqlite3'
-gem 'sass-rails', '~> 4.0.0.rc1'
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
-gem 'jbuilder', '~> 1.0.1'
-gem 'bcrypt-ruby', '~> 4.0.0'
+gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'jbuilder'
+gem 'devise'
 
-group :doc do
-  gem 'sdoc', require: false
+group :assets do
+  gem 'sass-rails',   '~> 3.2.3'
+  gem 'coffee-rails', '~> 3.2.1'
+  gem 'uglifier', '>= 1.0.3'
 end
-
