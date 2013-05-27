@@ -1,0 +1,20 @@
+<div id="map-canvas-<%= user.id %>" class="user-map"></div>
+<script type="text/javascript">
+  $(function() {
+    var map = new google.maps.Map(document.getElementById("map-canvas-<%= user.id %>"), {
+      zoom: 10,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+
+    var pos = new google.maps.LatLng(<%= location.latitude %>, <%= location.longitude %>);
+
+    var marker = new google.maps.Marker({
+      map:map,
+      draggable:false,
+      animation: google.maps.Animation.DROP,
+      position: pos
+    });
+
+    map.setCenter(pos);
+  });
+</script>

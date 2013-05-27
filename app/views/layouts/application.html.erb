@@ -5,6 +5,36 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
+  <script type="text/javascript">
+    window.MLStaffer = {};
+    <% if user_signed_in? %>
+      MLStaffer.CurrentUserId = <%= current_user.id %>;
+      <% if current_user.location.try(:created_at) < 1.hour.ago %>
+        function getLocation() {
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+              $.ajax({
+                url: "/users/" + MLStaffer.CurrentUserId,
+                type: 'PUT',
+                dataType: 'json',
+                data: {
+                  user: {
+                    location: {
+                      latitude: position.coords.latitude,
+                      longitude: position.coords.longitude
+                    }
+                  }
+                }
+              });
+            });
+          }
+        }
+        google.maps.event.addDomListener(window, 'load', getLocation);
+      <% end %>
+    <% end %>
+  </script>
 </head>
 <body>
 
