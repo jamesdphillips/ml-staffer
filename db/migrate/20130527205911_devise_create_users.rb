@@ -28,8 +28,8 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :im_handle
       t.string :im_service
 
-      t.datetime :start_work_hour
-      t.datetime :end_work_hour
+      t.integer :start_work_hour
+      t.integer :end_work_hour
 
       t.timestamps
     end
