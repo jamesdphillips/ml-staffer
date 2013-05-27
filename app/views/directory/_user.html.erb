@@ -1,8 +1,9 @@
 <% location = user.location %>
 <div class="user card <%= location.present? ? 'card-with-map' : '' %>">
-  <!-- <img src="images/<%= user.photo_url %>" /> -->
+  <div class="avatar">
+    <img src="<%= user.gravatar_url(100) %>" />
+  </div>
   <span class="status"><%= user.gtalk_status %></span>
-  <img src="http://placehold.it/300x300" class="avatar" />
   <div class="details">
     <p class="name"><%= user.name %></p>
     <p class="info">
