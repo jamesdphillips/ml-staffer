@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
   end
 
   def location
-    location_updates.last
+    location_updates.first
   end
 
   def location=(params)

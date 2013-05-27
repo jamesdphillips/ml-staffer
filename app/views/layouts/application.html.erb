@@ -12,7 +12,7 @@
     <% if user_signed_in? %>
       MLStaffer.CurrentUserId = <%= current_user.id %>;
       <% last_location_update = current_user.location.try(:created_at) %>
-      <% if !last_location_update.present? || last_location_update < 1.hour.ago %>
+      <% if !last_location_update.present? || last_location_update < 5.minute.ago %>
         function getLocation() {
           if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function(position) {
@@ -23,6 +23,7 @@
                 data: {
                   user: {
                     location: {
+                      source: "web",
                       latitude: position.coords.latitude,
                       longitude: position.coords.longitude
                     }
