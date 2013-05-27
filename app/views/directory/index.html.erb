@@ -1,3 +1,6 @@
-<% @users.each do |user| %>
-  <%= render partial: "user", locals: { user: user } %>
-<% end %>
+<div id="wrapper">
+	<header>MetaLab Employee Directory</header>
+	<% @users.each do |user| %>
+  		<%= render partial: "user", locals: { user: user } %>
+	<% end %>
+</div>
