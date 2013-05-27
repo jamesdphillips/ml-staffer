@@ -1,13 +1,15 @@
 <% location = user.location %>
-<div class="user card <%= location.present? ? 'card-with-map' : '' %>">
+<div class="<%= user.gtalk_status %> user card <%= location.present? ? 'card-with-map' : '' %>">
   <!-- <img src="images/<%= user.photo_url %>" /> -->
-  <span class="status"><%= user.gtalk_status %></span>
   <img src="http://placehold.it/300x300" class="avatar" />
   <div class="details">
-    <p class="name"><%= user.name %></p>
+    <p class="name">
+      <span class="status"><%= user.gtalk_status %></span>
+      <%= user.name %>
+      <span class="email"><a href="mailto:<%= user.email %>"><%= user.email %></a></span>
+    </p>
     <p class="info">
       <span class="role"><%= user.role %></span>
-      <span class="email"><a href="mailto:<%= user.email %>"><%= user.email %></a></span>
     </p>
     <p class="hours"><%= display_hour user.start_work_hour || 9 %> to <%= display_hour user.end_work_hour || 17 %></p>
   </div>
