@@ -51,6 +51,8 @@ MlStaffer::Application.configure do
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
 
+  config.action_mailer.default_url_options = { :host => ENV["ML_STAFFER_DOMAIN"] || "localhost:3000" }
+
   # Enable threaded mode
   # config.threadsafe!
 
