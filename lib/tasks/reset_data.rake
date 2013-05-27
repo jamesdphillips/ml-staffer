@@ -17,6 +17,9 @@ namespace :ml_staffer do
       })
       user.photo_url = data[:photo_url]
       user.role = data[:role]
+      user.start_work_hour = 9
+      user.end_work_hour = 17
+      user.timezone = "PDT"
       user.save!
       user.confirm!
     end

@@ -1,6 +1,11 @@
 <div class="user">
   <img src="images/<%= user.photo_url %>" />
   <p><%= user.name %></p>
-  <p><%= user.email %></p>
-  <p><%= user.role %></p>
+  <p><%= user.role %> / <a href="mailto:<%= user.email %>"><%= user.email %></a></p>
+  <hr />
+  <p>
+    <%= display_hour user.start_work_hour %>
+    to
+    <%= display_hour user.end_work_hour %>
+  </p>
 </div>
