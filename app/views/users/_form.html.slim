@@ -1,0 +1,8 @@
+= simple_form_for @user do |f|
+  = f.input :email
+  = f.input :role
+  = f.time_zone_select :timezone, /US/
+  = f.input :start_work_hour, defualt: 0
+  = f.input :end_work_hour, default: 24
+
+  = f.button :submit
