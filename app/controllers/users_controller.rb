@@ -14,8 +14,12 @@ class UsersController < ApplicationController
   end
 
   def create
-    @users = User.create(params[:user])
-    respond_with(@user)
+    @user = User.new(params[:user])
+    if @user.save
+      respond_with(@user)
+    else
+      redirect_to :new
+    end
   end
 
   def edit

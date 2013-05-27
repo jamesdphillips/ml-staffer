@@ -1,4 +1,6 @@
 = simple_form_for @user do |f|
   = f.input :email
-  = f.input :timezone, priority: /US/
+  = f.input :role
+  = f.time_zone_select :timezone, /US/
+
   = f.button :submit
