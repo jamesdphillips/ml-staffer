@@ -11,7 +11,8 @@
     window.MLStaffer = {};
     <% if user_signed_in? %>
       MLStaffer.CurrentUserId = <%= current_user.id %>;
-      <% if current_user.location.try(:created_at) < 1.hour.ago %>
+      <% last_location_update = current_user.location.try(:created_at) %>
+      <% if !last_location_update.present? || last_location_update < 1.hour.ago %>
         function getLocation() {
           if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function(position) {
