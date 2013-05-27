@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.12'
+gem 'rails', '~> 3.2.0'
 gem 'sqlite3'
 gem 'jquery-rails'
 gem 'bcrypt-ruby', '~> 3.0.0'
@@ -12,3 +12,5 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
 end
+
+

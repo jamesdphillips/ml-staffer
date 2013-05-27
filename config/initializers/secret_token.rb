@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-MlStaffer::Application.config.secret_token = 'ab116609004f987bd0267df0752ea1703a7dd1f180ba08216ad220dbd98875f4871b5ee75bcba627727d6084f655cc149cf6bd264014517dfe37eae389d43e74'
+MlStaffer::Application.config.secret_token = '42c453702e42b4706085a49c8690aa31475d093515f1d91ce11e4514ee91a121113a4162309e66f99a98a3769703c60f759205f0c1b135d550a327e6de43b800'
