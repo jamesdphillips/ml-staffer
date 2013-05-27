@@ -4,4 +4,15 @@ class User < ActiveRecord::Base
          :confirmable # , :omniauthable
 
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me
+
+  before_create :generate_password
+
+  private
+
+  def generate_password
+    unless password
+      self.password = self.password_confirmation = SecureRandom.urlsafe_base64(8)
+    end
+  end
+
 end
