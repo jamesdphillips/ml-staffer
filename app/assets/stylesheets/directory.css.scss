@@ -13,6 +13,7 @@ body {
   line-height: 20px;
   background: #f4f4f4;
 	color: #333;
+  -webkit-font-smoothing: antialiased;
 }
 
 header {
@@ -21,7 +22,7 @@ header {
 
 		weight: bold;
 		size: 22px;
-	}	
+	}
 }
 
 #wrapper {
@@ -56,6 +57,12 @@ header {
     float: left;
   }
 
+  .status {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+
   .details {
     float: left;
     padding: 20px;
@@ -64,14 +71,14 @@ header {
     background: #eee;
 
     p {
-      margin: 0;
-      padding: 0;
+      &.name {
+        font-size: 18px;
+        font-weight: 600;
+      }
+      &.info, &.hours {
+        font-size: 14px;
+        color: #666;
+      }
     }
-  }
-
-  .status {
-    position: absolute;
-    top: 20px;
-    left: 20px;
   }
 }
