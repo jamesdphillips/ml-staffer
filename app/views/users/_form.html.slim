@@ -1,8 +1,11 @@
 = simple_form_for @user do |f|
   = f.input :email
   = f.input :role
-  = f.time_zone_select :timezone, /US/
+  = f.input :location
+  = f.input :timezone, as: :time_zone, priority: /US/
+  = f.input :birthday, as: :date
   = f.input :start_work_hour, defualt: 0
   = f.input :end_work_hour, default: 24
+  = f.input :bio, as: :text
 
   = f.button :submit

@@ -3,5 +3,7 @@ MlStaffer::Application.routes.draw do
 
   resources :users
 
+  get '/auth/:provider/callback', to: 'callbacks#create'
+
   root :to => "directory#index"
 end

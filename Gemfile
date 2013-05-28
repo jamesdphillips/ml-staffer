@@ -9,7 +9,9 @@ gem 'devise'
 gem 'simple_form'
 gem 'country_select'
 gem 'xmpp4r-simple', github: 'blaine/xmpp4r-simple'
-
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'fb_graph'
 
 group :development, :test do
   gem 'sqlite3'

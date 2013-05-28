@@ -1,5 +1,5 @@
-<% location = user.location %>
-<div class="<%= user.gtalk_status %> user card <%= location.present? ? 'card-with-map' : '' %>">
+<% location_update = user.location_update %>
+<div class="<%= user.gtalk_status %> user card <%= location_update.present? ? 'card-with-map' : '' %>">
   <div class="avatar">
     <div class="gloss"></div>
     <img src="<%= user.gravatar_url(100) %>"/>
@@ -15,10 +15,10 @@
     </p>
     <p class="hours"><%= display_hour user.start_work_hour || 9 %> to <%= display_hour user.end_work_hour || 17 %></p>
   </div>
-  <% if location.present? %>
+  <% if location_update.present? %>
     <div class="location">
-      <p class="location-updated-at">Location updated <%= time_ago_in_words(location.created_at) %> ago (via <%= location.source %>)</p>
-      <%= render partial: "map", locals: { user: user, location: location } %>
+      <p class="location-updated-at">Location updated <%= time_ago_in_words(location_update.created_at) %> ago (via <%= location_update.source %>)</p>
+      <%= render partial: "map", locals: { user: user, location_update: location_update } %>
     </div>
   <% end %>
 </div>
