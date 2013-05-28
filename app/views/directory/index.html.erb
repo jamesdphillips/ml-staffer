@@ -1,5 +1,8 @@
 <div id="wrapper">
-	<header>MetaLab Employee Directory</header>
+	<header>
+    <%= image_tag("logo.png") %>
+    <h1>MetaLab Employee Directory</h1>
+  </header>
 	<% @users.each do |user| %>
   		<%= render partial: "user", locals: { user: user } %>
 	<% end %>

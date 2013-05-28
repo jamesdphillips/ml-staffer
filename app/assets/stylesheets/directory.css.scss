@@ -11,23 +11,28 @@ body {
   font-family: "Proxima Nova", "Open Sans", "Helvetica Neue", "Helvetica", "Lucida Grande", Arial, sans-serif;
   font-size: 16px;
   line-height: 20px;
-  background: #111;
+  background: url("bg.png");
 	color: #333;
   -webkit-font-smoothing: antialiased;
 }
 
 header {
-	margin-bottom: 30px;
-	font: {
-
-		weight: bold;
-		size: 22px;
-	}
+  text-align: center;
+  margin: 0 0 50px 0;
+  h1 {
+    color: #fff;
+    font: {
+      weight: bold;
+      size: 22px;
+    }
+    padding: 20px 0 0 0;
+    @include text-shadow(0 1px 1px #000);
+  }
 }
 
 #wrapper {
 	width: 1040px;
-	margin: 50px auto;
+	margin: 20px auto;
 	padding: 20px;
 	padding-bottom: 0;
 	@include clearfix();
