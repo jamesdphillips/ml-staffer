@@ -22,4 +22,12 @@ class CallbacksController < ApplicationController
     }
   end
 
+  def google_oauth2
+    current_user.google_uid = request.env['omniauth.auth'][:uid]
+    current_user.google_key = request.env['omniauth.auth'][:credentials][:token]
+    current_user.save!
+
+    redirect_to controller: "directory", action: "index"
+  end
+
 end

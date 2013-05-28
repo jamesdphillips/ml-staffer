@@ -13,6 +13,7 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'fb_graph'
 gem 'tinder', github: 'collectiveidea/tinder'
+gem 'omniauth-google-oauth2'
 
 group :development, :test do
   gem 'sqlite3'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130528004332) do
+ActiveRecord::Schema.define(:version => 20130528005310) do
 
   create_table "location_updates", :force => true do |t|
     t.integer  "user_id"
@@ -56,6 +56,8 @@ ActiveRecord::Schema.define(:version => 20130528004332) do
     t.date     "birthday"
     t.string   "location"
     t.binary   "bio"
+    t.string   "google_uid"
+    t.string   "google_key"
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
