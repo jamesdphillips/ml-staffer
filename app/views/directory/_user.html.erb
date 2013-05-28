@@ -15,7 +15,7 @@
   </div>
   <% if location.present? %>
     <div class="location">
-      <p class="location-updated-at">Location updated <%= time_ago_in_words(location.created_at) %> ago</p>
+      <p class="location-updated-at">Location updated <%= time_ago_in_words(location.created_at) %> ago (via <%= location.source %>)</p>
       <%= render partial: "map", locals: { user: user, location: location } %>
     </div>
   <% end %>
