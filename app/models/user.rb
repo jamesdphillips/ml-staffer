@@ -12,7 +12,11 @@ class User < ActiveRecord::Base
 
   attr_accessible :name, :email, :password, :password_confirmation,
                   :remember_me, :timezone, :role, :start_work_hour,
+<<<<<<< HEAD
                   :end_work_hour, :gtalk_status, :location
+=======
+                  :end_work_hour, :gtalk_status, :bio, :location, :birthday
+>>>>>>> Facebook authentication
 
   before_create :generate_password
 
