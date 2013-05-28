@@ -31,6 +31,21 @@ class User < ActiveRecord::Base
     location_updates.create(params)
   end
 
+  def update_facebook_checkin
+    return unless self.fb_key
+    last_checkin = location_updates.where(source: "facebook").limit(1)[0]
+    checkin = FbGraph::User.me(self.fb_key).checkins[0]
+    if !last_checkin || (last_checkin.external_id != checkin.identifier && checkin.created_time > last_checkin.created_at)
+      location_updates.create({
+        external_id: checkin.identifier,
+        name: checkin.place.name,
+        latitude: checkin.place.location.latitude,
+        longitude: checkin.place.location.longitude,
+        source: "facebook"
+      })
+    end
+  end
+
   private
 
   def generate_password

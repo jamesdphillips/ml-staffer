@@ -62,7 +62,6 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
-    fssm (0.2.10)
     faraday (0.8.7)
       multipart-post (~> 1.1)
     fb_graph (2.7.1)
@@ -70,6 +69,7 @@ GEM
       multi_json (>= 1.3)
       rack-oauth2 (>= 0.14.4)
       tzinfo
+    fssm (0.2.10)
     hashie (2.0.5)
     hike (1.2.2)
     httpauth (0.2.0)
@@ -183,9 +183,9 @@ DEPENDENCIES
   fb_graph
   jbuilder
   jquery-rails
-  pg
   omniauth
   omniauth-facebook
+  pg
   rails (~> 3.2.0)
   sass-rails (~> 3.2.3)
   simple_form
