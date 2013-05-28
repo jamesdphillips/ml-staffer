@@ -100,13 +100,6 @@ $online-green: #83d837;
     }
   }
 
-  .user-map {
-    width: 100%;
-    height: 220px;
-    overflow: hidden;
-    @include border-radius(5px);
-  }
-
   .status {
     @include border-radius(100px);
     width: 8px;
@@ -118,6 +111,28 @@ $online-green: #83d837;
     top: 5px;
     left: 0;
     background: #444;
+  }
+
+  .location {
+
+    .location-updated-at {
+      display: block;
+      clear: both;
+      height: 50px;
+      line-height: 50px;
+      text-align: left;
+      text-indent: 20px;
+      font-size: 14px;
+      color: #666666;
+    }
+
+    .user-map {
+      width: 100%;
+      height: 170px;
+      overflow: hidden;
+      @include border-radius(5px);
+    }
+
   }
 
   &.card-with-map {
