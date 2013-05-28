@@ -7,6 +7,7 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'jbuilder'
 gem 'devise'
 gem 'simple_form'
+gem 'compass'
 gem 'country_select'
 gem 'xmpp4r-simple', github: 'blaine/xmpp4r-simple'
 
