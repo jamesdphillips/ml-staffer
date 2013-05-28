@@ -1,24 +1,32 @@
 <% location_update = user.location_update %>
-<div class="<%= user.gtalk_status %> user card <%= location_update.present? ? 'card-with-map' : '' %>">
-  <div class="avatar">
-    <div class="gloss"></div>
-    <img src="<%= user.gravatar_url(100) %>"/>
-  </div>
-  <div class="details">
-    <p class="name">
-      <span class="status"><%= user.gtalk_status %></span>
-      <%= user.name %>
-      <span class="email"><a href="mailto:<%= user.email %>"><%= user.email %></a></span>
-    </p>
-    <p class="info">
-      <span class="role"><%= user.role %></span>
-    </p>
-    <p class="hours"><%= display_hour user.start_work_hour || 9 %> to <%= display_hour user.end_work_hour || 17 %></p>
-  </div>
-  <% if location_update.present? %>
-    <div class="location">
-      <p class="location-updated-at">Location updated <%= time_ago_in_words(location_update.created_at) %> ago (via <%= location_update.source %>)</p>
-      <%= render partial: "map", locals: { user: user, location_update: location_update } %>
+<div class="card-container">
+  <div class="front <%= user.gtalk_status %> user card <%= location_update.present? ? 'card-with-map' : '' %>">
+    <div class="avatar">
+      <div class="gloss"></div>
+      <img src="<%= user.gravatar_url(100) %>"/>
     </div>
-  <% end %>
+    <div class="details">
+      <p class="name">
+        <span class="status"><%= user.gtalk_status %></span>
+        <%= user.name %>
+      </p>
+      <p class="info">
+        <span class="role"><%= user.role %></span> &bull; <%= display_hour user.start_work_hour || 9 %> to <%= display_hour user.end_work_hour || 17 %>
+        <span class="email"><a href="mailto:<%= user.email %>"><%= user.email %></a></span>
+      </p>
+    </div>
+    <% if location_update.present? %>
+      <div class="location">
+        <p class="location-updated-at">
+        <% if location_update.source == "facebook" %>
+          Checked into <%= location_update.name %>
+        <% else  %>
+          Location updated
+        <% end %>
+        <%= time_ago_in_words(location_update.created_at) %> ago (via <%= location_update.source %>)
+      </p>
+        <%= render partial: "map", locals: { user: user, location_update: location_update } %>
+      </div>
+    <% end %>
+  </div>
 </div>
