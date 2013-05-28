@@ -7,12 +7,12 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'jbuilder'
 gem 'devise'
 gem 'simple_form'
-gem 'compass'
 gem 'country_select'
 gem 'xmpp4r-simple', github: 'blaine/xmpp4r-simple'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'fb_graph'
+gem 'tinder', github: 'collectiveidea/tinder'
 
 group :development, :test do
   gem 'sqlite3'
