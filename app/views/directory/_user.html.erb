@@ -14,6 +14,9 @@
     <p class="hours"><%= display_hour user.start_work_hour || 9 %> to <%= display_hour user.end_work_hour || 17 %></p>
   </div>
   <% if location.present? %>
-    <p><%= render partial: "map", locals: { user: user, location: location } %></p>
+    <div class="location">
+      <p class="location-updated-at">Location updated <%= time_ago_in_words(location.created_at) %> ago (via <%= location.source %>)</p>
+      <%= render partial: "map", locals: { user: user, location: location } %>
+    </div>
   <% end %>
 </div>
