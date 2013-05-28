@@ -17,8 +17,14 @@
     </div>
     <% if location_update.present? %>
       <div class="location">
-        <p class="location-updated-at">Location updated <%= time_ago_in_words(location_update.created_at) %> ago (via <%= location_update.source %>)
-        </p>
+        <p class="location-updated-at">
+        <% if location_update.source == "facebook" %>
+          Checked into <%= location_update.name %>
+        <% else  %>
+          Location updated
+        <% end %>
+        <%= time_ago_in_words(location_update.created_at) %> ago (via <%= location_update.source %>)
+      </p>
         <%= render partial: "map", locals: { user: user, location_update: location_update } %>
       </div>
     <% end %>
