@@ -62,10 +62,17 @@ $online-green: #83d837;
   @include border-radius(5px);
 
 	.avatar {
+    overflow: hidden;
     height: 100px;
     width: 100px;
     float: left;
     border-bottom: 1px solid rgba(255,255,255,0.04);
+    @include border-radius(5px 0 0 0);
+    img {
+      height: 100px;
+      width: 100px;
+      position: relative;
+    }
   }
 
   .details {
@@ -123,12 +130,13 @@ $online-green: #83d837;
     .location-updated-at {
       display: block;
       clear: both;
-      height: 50px;
       line-height: 50px;
       text-align: left;
       text-indent: 20px;
       font-size: 14px;
-      color: #666666;
+      color: #999;
+      font-weight: 600;
+      text-shadow: 0 -1px 0 rgba(0,0,0,0.8);
     }
 
     .user-map {
