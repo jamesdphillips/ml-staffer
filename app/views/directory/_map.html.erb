@@ -6,7 +6,7 @@
       mapTypeId: google.maps.MapTypeId.ROADMAP
     });
 
-    var pos = new google.maps.LatLng(<%= location.latitude %>, <%= location.longitude %>);
+    var pos = new google.maps.LatLng(<%= location_update.latitude %>, <%= location_update.longitude %>);
 
     var marker = new google.maps.Marker({
       map:map,

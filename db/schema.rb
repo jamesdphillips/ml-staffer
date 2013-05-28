@@ -49,6 +49,11 @@ ActiveRecord::Schema.define(:version => 20130527235256) do
     t.datetime "updated_at",                             :null => false
     t.string   "role"
     t.string   "gtalk_status"
+    t.string   "fb_uid"
+    t.string   "fb_key"
+    t.date     "birthday"
+    t.string   "location"
+    t.binary   "bio"
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
