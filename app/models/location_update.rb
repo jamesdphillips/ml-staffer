@@ -1,4 +1,4 @@
 class LocationUpdate < ActiveRecord::Base
   belongs_to :user
-  attr_accessible :latitude, :longitude
+  attr_accessible :latitude, :longitude, :source
 end

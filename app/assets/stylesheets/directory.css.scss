@@ -60,6 +60,7 @@ $online-green: #83d837;
     height: 100px;
     width: 100px;
     float: left;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
   }
 
   .details {
@@ -116,9 +117,7 @@ $online-green: #83d837;
     position: absolute;
     top: 5px;
     left: 0;
-    &.online {
-      background: green
-    }
+    background: #444;
   }
 
   &.card-with-map {

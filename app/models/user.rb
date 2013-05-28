@@ -1,3 +1,5 @@
+require "digest/md5"
+
 class User < ActiveRecord::Base
 
   attr_accessor :location
@@ -16,8 +18,12 @@ class User < ActiveRecord::Base
 
   validates :name, :email, presence: true
 
+  def gravatar_url(size=100)
+    "http://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(email)}?size=#{size}"
+  end
+
   def location
-    location_updates.last
+    location_updates.first
   end
 
   def location=(params)
